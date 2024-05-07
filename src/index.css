@@ -44,6 +44,7 @@ footer {
   left: 0;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
@@ -168,19 +169,31 @@ footer button:hover {
 
 @media (min-width: 640px) {
   .sidebar {
-    position: relative;
-    inset: unset;
-    min-width: 30%;
-    max-height: 100vh;
+    position: fixed;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30%; /* Set sidebar width to 30% of the screen */
+    max-width: 400px; /* Set maximum width for the sidebar */
+    z-index: 10;
+    overflow-y: auto; /* Add scrollbar if needed */
     box-shadow: 0 0 40px 1px #030615;
   }
-  .sidebarContent{
-    margin: unset;
-    width: 100%;
+
+  .sidebarContent {
+    padding: 1rem;
+    background: #030615;
+    height: 100%;
+    width: 100%; /* Make sidebar content width 100% */
   }
+
   .bgOverlay {
-    right: 0;
-    left: unset;
-    width: 100vw;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: #030615;
+    opacity: 0.6;
   }
 }
